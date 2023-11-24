@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>SOLO INGES</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -26,6 +26,8 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            overflow-y: auto; /* Agregado para permitir desplazamiento vertical */
+            height: 100vh; /* Ajustado para ocupar la altura completa de la ventana */
         }
 
         .info-section {
@@ -34,64 +36,30 @@
             margin: 20px auto;
         }
 
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-container {
+        .portfolio-container {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .project {
-            border: 1px solid #ccc;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            width: 200px;
+        .portfolio-item {
+            width: calc(30% - 20px); /* Ajusta el ancho de cada caja según tus necesidades */
             margin: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
-        .project img {
+        .portfolio-item img {
             width: 100%;
             height: auto;
-            margin-bottom: 10px;
+            display: block;
         }
 
-        .project h2 {
-            margin-bottom: 10px;
-        }
-
-        .project:nth-child(1) {
-            background: linear-gradient(to right, #4CAF50, #3498db);
-        }
-
-        .project:nth-child(2) {
-            background: linear-gradient(to right, #e74c3c, #f39c12);
-        }
-
-        .project:nth-child(3) {
-            background: linear-gradient(to right, #9b59b6, #2c3e50);
-        }
-
-        .project:nth-child(4) {
-            background: linear-gradient(to right, #3498db, #f39c12);
-        }
-
-        .project:nth-child(5) {
-            background: linear-gradient(to right, #2c3e50, #4CAF50);
+        .portfolio-item h2 {
+            text-align: center;
+            margin: 10px 0;
         }
 
         .control-button {
@@ -101,6 +69,7 @@
             padding: 10px;
             cursor: pointer;
             transition: background 0.3s ease;
+            margin-top: 20px;
         }
 
         .control-button:hover {
@@ -110,48 +79,69 @@
 </head>
 <body>
     <header>
-        <h1>Mi Portafolio</h1>
+        <h1>SOLO INGES</h1>
     </header>
 
     <main>
         <div class="info-section">
             <h2>Bienvenido a mi portafolio</h2>
-            <p>Explora mis proyectos y descubre mi experiencia en el desarrollo web.</p>
+            <p>Explora mi trabajo y descubre más sobre mis proyectos.</p>
         </div>
 
-        <div class="carousel-container">
-            <div class="project-container">
-                <!-- Repetir los proyectos para que se muestren continuamente -->
-                <div class="project" onclick="redirectToProject('Proyecto 1')">
-                    <img src="perro.jpg" alt="Proyecto 1">
-                    <h2>Proyecto 1</h2>
-                    <p>Descripción del Proyecto 1.</p>
-                </div>
-                <div class="project" onclick="redirectToProject('Proyecto 2')">
-                    <img src="perro.jpg" alt="Proyecto 2">
-                    <h2>Proyecto 2</h2>
-                    <p>Descripción del Proyecto 2.</p>
-                </div>
-                <div class="project" onclick="redirectToProject('Proyecto 3')">
-                    <img src="perro.jpg" alt="Proyecto 3">
-                    <h2>Proyecto 3</h2>
-                    <p>Descripción del Proyecto 3.</p>
-                </div>
-                <div class="project" onclick="redirectToProject('Proyecto 4')">
-                    <img src="perro.jpg" alt="Proyecto 4">
-                    <h2>Proyecto 4</h2>
-                    <p>Descripción del Proyecto 4.</p>
-                </div>
-                <div class="project" onclick="redirectToProject('Proyecto 5')">
-                    <img src="perro.jpg" alt="Proyecto 5">
-                    <h2>Proyecto 5</h2>
-                    <p>Descripción del Proyecto 5.</p>
-                </div>
-                <!-- Puedes agregar más proyectos si lo deseas -->
+        <div class="portfolio-container">
+            <!-- Puedes ajustar la cantidad de proyectos según tus necesidades -->
+            <div class="portfolio-item">
+                <img src="imagenes/1.jpeg" alt="Proyecto 1">
+                <h2>Proyecto 1</h2>
             </div>
+            <div class="portfolio-item">
+                <img src="imagenes/2.jpeg" alt="Proyecto 2">
+                <h2>Proyecto 2</h2>
+            </div>
+            <div class="portfolio-item">
+                <img src="imagenes/3.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <!-- Repite estos bloques para cada proyecto -->
+
+            <!-- Segunda fila -->
+            <div class="portfolio-item">
+                <img src="imagenes/4.jpeg" alt="Proyecto 4">
+                <h2>Proyecto 4</h2>
+            </div>
+            <div class="portfolio-item">
+                <img src="imagenes/5.jpeg" alt="Proyecto 5">
+                <h2>Proyecto 5</h2>
+            </div>
+            <div class="portfolio-item">
+                <img src="imagenes/6.jpeg" alt="Proyecto 6">
+                <h2>Proyecto 6</h2>
+            </div>
+            <!-- Repite estos bloques para cada proyecto -->
+
+            <!-- Tercera fila -->
+            <div class="portfolio-item">
+                <img src="imagenes/7.jpeg" alt="Proyecto 7">
+                <h2>Proyecto 7</h2>
+            </div>
+            <div class="portfolio-item">
+                <img src="imagenes/8.jpeg" alt="Proyecto 8">
+                <h2>Proyecto 8</h2>
+            </div>
+            <div class="portfolio-item">
+                <img src="imagenes/9.jpeg" alt="Proyecto 9">
+                <h2>Proyecto 9</h2>
+            </div>
+            <!-- Repite estos bloques para cada proyecto -->
+
+            <!-- Cuarta fila -->
+            <div class="portfolio-item">
+                <img src="imagenes/proyecto10.jpg" alt="Proyecto 10">
+                <h2>Proyecto 10</h2>
+            </div>
+            <!-- Puedes agregar más proyectos si lo deseas -->
         </div>
 
-        <button class="control-button" onclick="spinRoulette()">Girar Carrusel</button>
 
         <div class="info-section">
             <p>¿Interesado en trabajar juntos o aprender más sobre mis habilidades?</p>
@@ -159,26 +149,5 @@
         </div>
     </main>
 
-    <script>
-        function spinRoulette() {
-            const projectContainer = document.querySelector('.project-container');
-            const projectWidth = document.querySelector('.project').offsetWidth;
-            const numProjects = document.querySelectorAll('.project').length;
-            const randomOffset = Math.floor(Math.random() * numProjects);
-            const durationLeft = (Math.random() * (4 - 3) + 3).toFixed(2); // Duración aleatoria entre 3 y 4 segundos para la izquierda
-            const durationRight = (Math.random() * (2 - 1) + 1).toFixed(2); // Duración aleatoria entre 1 y 2 segundos para la derecha
-            projectContainer.style.transition = `transform ${durationLeft}s cubic-bezier(0.5, 2, 0.5, 0.5)`;
-            projectContainer.style.transform = `translateX(-${projectWidth * randomOffset}px)`;
-            setTimeout(() => {
-                projectContainer.style.transition = `transform ${durationRight}s ease-in-out`;
-                projectContainer.style.transform = 'translateX(0)';
-            }, durationLeft * 1000);
-        }
-
-        function redirectToProject(projectName) {
-            alert(`Ir al proyecto: ${projectName}`);
-            // Puedes redirigir a la página del proyecto aquí
-        }
-    </script>
 </body>
 </html>
