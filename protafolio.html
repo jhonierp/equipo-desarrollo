@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .info-section {
+            max-width: 800px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .project {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .project h2 {
+            margin-bottom: 10px;
+        }
+
+        .project:nth-child(1) {
+            background: linear-gradient(to right, #4CAF50, #3498db);
+        }
+
+        .project:nth-child(2) {
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+        }
+
+        .project:nth-child(3) {
+            background: linear-gradient(to right, #9b59b6, #2c3e50);
+        }
+
+        .project-container:hover {
+            animation: none;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .control-button {
+            background: linear-gradient(to right, #333, #555);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .control-button:hover {
+            background: linear-gradient(to right, #555, #777);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio</h1>
+    </header>
+
+    <main>
+        <div class="info-section">
+            <h2>Bienvenido a mi portafolio</h2>
+            <p>Explora mis proyectos y descubre mi experiencia en el desarrollo web.</p>
+        </div>
+
+        <div class="carousel-container" onmousedown="startDragging(event)" onmouseup="stopDragging()" onmouseleave="stopDragging()">
+            <div class="project-container">
+                <div class="project">
+                    <h2>Proyecto 1</h2>
+                    <p>Descripción del Proyecto 1.</p>
+                </div>
+                <div class="project">
+                    <h2>Proyecto 2</h2>
+                    <p>Descripción del Proyecto 2.</p>
+                </div>
+                <div class="project">
+                    <h2>Proyecto 3</h2>
+                    <p>Descripción del Proyecto 3.</p>
+                </div>
+                <!-- Puedes agregar más proyectos si lo deseas -->
+            </div>
+
+            <div class="carousel-controls">
+                <button class="control-button" onclick="prevProject()">Anterior</button>
+                <button class="control-button" onclick="nextProject()">Siguiente</button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <p>¿Interesado en trabajar juntos o aprender más sobre mis habilidades?</p>
+            <p>Contacta conmigo: tu@email.com</p>
+        </div>
+    </main>
+
+    <script>
+        let isDragging = false;
+        let startPosition = 0;
+        let currentTranslate = 0;
+
+        function startDragging(event) {
+            isDragging = true;
+            startPosition = event.clientX;
+            currentTranslate = getTranslateX();
+        }
+
+        function stopDragging() {
+            isDragging = false;
+        }
+
+        function moveCarousel(event) {
+            if (isDragging) {
+                const mouseX = event.clientX;
+                const displacement = mouseX - startPosition;
+                const newTranslate = currentTranslate + displacement;
+                setTranslateX(newTranslate);
+            }
+        }
+
+        function getTranslateX() {
+            const projectContainer = document.querySelector('.project-container');
+            const transformValue = window.getComputedStyle(projectContainer).getPropertyValue('transform');
+            const matrix = new DOMMatrix(transformValue);
+            return matrix.m41;
+        }
+
+        function setTranslateX(value) {
+            const projectContainer = document.querySelector('.project-container');
+            projectContainer.style.transform = `translateX(${value}px)`;
+        }
+
+        function prevProject() {
+            const projectContainer = document.querySelector('.project-container');
+            const currentTranslate = getTranslateX();
+            const projectWidth = document.querySelector('.project').offsetWidth;
+            const newTranslate = currentTranslate + projectWidth;
+            setTranslateX(newTranslate);
+        }
+
+        function nextProject() {
+            const projectContainer = document.querySelector('.project-container');
+            const currentTranslate = getTranslateX();
+            const projectWidth = document.querySelector('.project').offsetWidth;
+            const newTranslate = currentTranslate - projectWidth;
+            setTranslateX(newTranslate);
+        }
+    </script>
+</body>
+</html>
