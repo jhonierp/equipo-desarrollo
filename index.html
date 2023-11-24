@@ -26,8 +26,8 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            overflow-y: auto; /* Agregado para permitir desplazamiento vertical */
-            height: 100vh; /* Ajustado para ocupar la altura completa de la ventana */
+            overflow-y: auto;
+            height: 100vh;
         }
 
         .info-section {
@@ -45,35 +45,90 @@
         }
 
         .portfolio-item {
-            width: calc(30% - 20px); /* Ajusta el ancho de cada caja según tus necesidades */
+            position: relative;
+            width: calc(30% - 20px);
             margin: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
         }
 
         .portfolio-item img {
+            flex: 1;
             width: 100%;
             height: auto;
-            display: block;
+            border-radius: 10px 10px 0 0;
         }
 
         .portfolio-item h2 {
             text-align: center;
-            margin: 10px 0;
-        }
-
-        .control-button {
-            background: linear-gradient(to right, #333, #555);
+            margin: 0px 0;
+            background-color: #333;
             color: #fff;
-            border: none;
             padding: 10px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
         }
 
-        .control-button:hover {
-            background: linear-gradient(to right, #555, #777);
+        .info-section {
+            max-width: 800px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            height: 80%;
+            overflow: auto;
+            display: flex;
+        }
+
+        .modal-image {
+            width: 50%;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .resizable-image {
+            width: 90%;
+            height: auto;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .modal-description {
+            width: 50%;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -90,64 +145,86 @@
 
         <div class="portfolio-container">
             <!-- Puedes ajustar la cantidad de proyectos según tus necesidades -->
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="showModal('Proyecto 1', 'Joven guapo, poco uso, siempre fiel.')">
                 <img src="imagenes/1.jpeg" alt="Proyecto 1">
-                <h2>Proyecto 1</h2>
+                <h2>josa</h2>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="showModal('Proyecto 2', 'Otra descripción interesante.')">
                 <img src="imagenes/2.jpeg" alt="Proyecto 2">
-                <h2>Proyecto 2</h2>
+                <h2>Soto</h2>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
                 <img src="imagenes/3.jpeg" alt="Proyecto 3">
+                <h2>Yeda yt</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/4.jpeg" alt="Proyecto 3">
+                <h2>Maicol</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/5.jpeg" alt="Proyecto 3">
+                <h2>Carechimba</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/6.jpeg" alt="Proyecto 3">
                 <h2>Proyecto 3</h2>
             </div>
-            <!-- Repite estos bloques para cada proyecto -->
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/7.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/8.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/9.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/10.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/11.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/12.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
 
-            <!-- Segunda fila -->
-            <div class="portfolio-item">
-                <img src="imagenes/4.jpeg" alt="Proyecto 4">
-                <h2>Proyecto 4</h2>
-            </div>
-            <div class="portfolio-item">
-                <img src="imagenes/5.jpeg" alt="Proyecto 5">
-                <h2>Proyecto 5</h2>
-            </div>
-            <div class="portfolio-item">
-                <img src="imagenes/6.jpeg" alt="Proyecto 6">
-                <h2>Proyecto 6</h2>
-            </div>
-            <!-- Repite estos bloques para cada proyecto -->
-
-            <!-- Tercera fila -->
-            <div class="portfolio-item">
-                <img src="imagenes/7.jpeg" alt="Proyecto 7">
-                <h2>Proyecto 7</h2>
-            </div>
-            <div class="portfolio-item">
-                <img src="imagenes/8.jpeg" alt="Proyecto 8">
-                <h2>Proyecto 8</h2>
-            </div>
-            <div class="portfolio-item">
-                <img src="imagenes/9.jpeg" alt="Proyecto 9">
-                <h2>Proyecto 9</h2>
-            </div>
-            <!-- Repite estos bloques para cada proyecto -->
-
-            <!-- Cuarta fila -->
-            <div class="portfolio-item">
-                <img src="imagenes/proyecto10.jpg" alt="Proyecto 10">
-                <h2>Proyecto 10</h2>
-            </div>
-            <!-- Puedes agregar más proyectos si lo deseas -->
         </div>
-
 
         <div class="info-section">
             <p>¿Interesado en trabajar juntos o aprender más sobre mis habilidades?</p>
             <p>Contacta conmigo: tu@email.com</p>
         </div>
+
+        <!-- Modal -->
+        <div class="modal" id="modal" onclick="closeModal()">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <div class="modal-image">
+                    <img src="" alt="Proyecto Ampliado" id="modalImage" class="resizable-image">
+                </div>
+                <div class="modal-description" id="modalText"></div>
+            </div>
+        </div>
     </main>
 
+    <script>
+        function showModal(title, description) {
+            document.getElementById('modalImage').src = event.target.src;
+            document.getElementById('modalText').innerText = `Titulo: ${title}\nDescripción: ${description}`;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
+
+        
