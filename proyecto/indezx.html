@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipo Desarrollador</title>
+    <title>SOLO INGES</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            overflow: hidden;
         }
 
         header {
@@ -25,7 +26,8 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            background-color: #fff; /* Fondo blanco para el contenido principal */
+            overflow-y: auto;
+            height: 100vh;
         }
 
         .info-section {
@@ -37,8 +39,7 @@
         .portfolio-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-around;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -88,6 +89,12 @@
             margin: 0 2px;
         }
 
+        .info-section {
+            max-width: 800px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -105,11 +112,10 @@
             background: #fff;
             padding: 20px;
             border-radius: 10px;
-            width: 70%; /* Reducido el tamaño del modal */
-            height: 70%;
+            width: 50%;
+            height: 80%;
             overflow: auto;
             display: flex;
-            max-width: 800px;
         }
 
         .modal-image {
@@ -118,7 +124,7 @@
         }
 
         .resizable-image {
-            width: 100%;
+            width: 90%;
             height: auto;
             border-radius: 10px 0 0 10px;
         }
@@ -128,7 +134,7 @@
             padding: 20px;
             border-radius: 0 10px 10px 0;
             text-align: left;
-            font-size: 18px;
+            font-size: 18px; /* Ajusta el tamaño de la fuente según tus necesidades */
         }
 
         .close-button {
@@ -137,34 +143,24 @@
             right: 10px;
             cursor: pointer;
         }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>EQUIPO DESARROLLADOR</h1>
+        <h1>SOLO INGES</h1>
     </header>
 
     <main>
         <div class="info-section">
-            <h2>Bienvenido al Equipo Desarrollador</h2>
-            <p>Explora los perfiles de los desarrolladores y descubre más sobre nuestro talentoso equipo.</p>
-            <p>Somos un grupo apasionado por la tecnología y la innovación. Nuestra misión es crear soluciones impactantes y fiables.</p>
+            <h2>Bienvenido aL GRUPO LOS *INGES*</h2>
+            <p>Explora cual es tu inge favorito =).</p>
         </div>
 
         <div class="portfolio-container">
-            <div class="portfolio-item" onclick="showModal('Camilo', 'Joven guapo, poco uso, siempre fiel.')">
-                <img src="imagenes/1.jpeg" alt="Camilo">
-                <h2>Camilo</h2>
+            <!-- Puedes ajustar la cantidad de proyectos según tus necesidades -->
+            <div class="portfolio-item" onclick="showModal('Proyecto 1', 'Joven guapo, poco uso, siempre fiel.')">
+                <img src="imagenes/1.jpeg" alt="Proyecto 1">
+                <h2>josa</h2>
                 <div class="stars-container">
                     <span class="star">★</span>
                     <span class="star">★</span>
@@ -173,9 +169,9 @@
                     <span class="star">★</span>
                 </div>
             </div>
-            <div class="portfolio-item" onclick="showModal('Jhonier p', 'Otra descripción interesante.')">
-                <img src="imagenes/jp.jpeg" alt="JP">
-                <h2>JP</h2>
+            <div class="portfolio-item" onclick="showModal('Proyecto 2', 'Otra descripción interesante.')">
+                <img src="imagenes/2.jpeg" alt="Proyecto 2">
+                <h2>Soto</h2>
                 <div class="stars-container">
                     <span class="star">★</span>
                     <span class="star">★</span>
@@ -184,9 +180,9 @@
                     <span class="star">★</span>
                 </div>
             </div>
-            <div class="portfolio-item" onclick="showModal('Johan B', 'Otra descripción fascinante.')">
-                <img src="imagenes/5.jpeg" alt="Johan B">
-                <h2>Johan</h2>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/3.jpeg" alt="Proyecto 3">
+                <h2>Yeda yt</h2>
                 <div class="stars-container">
                     <span class="star">★</span>
                     <span class="star">★</span>
@@ -195,9 +191,9 @@
                     <span class="star">★</span>
                 </div>
             </div>
-            <div class="portfolio-item" onclick="showModal('Daniel', 'Otra descripción fascinante.')">
-                <img src="imagenes/4.jpeg" alt="Daniel">
-                <h2>Daniel</h2>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/4.jpeg" alt="Proyecto 3">
+                <h2>Maicol</h2>
                 <div class="stars-container">
                     <span class="star">★</span>
                     <span class="star">★</span>
@@ -206,11 +202,65 @@
                     <span class="star">★</span>
                 </div>
             </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/5.jpeg" alt="Proyecto 3">
+                <h2>Carechimba</h2>
+                <div class="stars-container">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Jhonier', 'el hombre mas papaxitho de todos.')">
+                <img src="imagenes/6.jpg" alt="Proyecto 3">
+                <h2>--JP--</h2>
+                <div class="stars-container">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/7.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+                <div class="stars-container">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/8.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/9.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/10.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/11.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <div class="portfolio-item" onclick="showModal('Proyecto 3', 'Otra descripción fascinante.')">
+                <img src="imagenes/12.jpeg" alt="Proyecto 3">
+                <h2>Proyecto 3</h2>
+            </div>
+            <!-- Agrega estrellas a los demás elementos según sea necesario -->
         </div>
 
         <div class="info-section">
-            <p>¿Interesado en trabajar juntos o aprender más sobre nuestras habilidades?</p>
-            <p>Contacta con nosotros: tu@email.com</p>
+            <p>¿Interesado en trabajar juntos o aprender más sobre mis habilidades?</p>
+            <p>Contacta conmigo: tu@email.com</p>
         </div>
 
         <!-- Modal -->
@@ -225,10 +275,6 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Equipo Desarrollador. Todos los derechos reservados.</p>
-    </footer>
-
     <script>
         function showModal(title, description) {
             document.getElementById('modalImage').src = event.target.src;
@@ -242,3 +288,5 @@
     </script>
 </body>
 </html>
+
+    
